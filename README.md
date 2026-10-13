@@ -6,13 +6,21 @@ Animated landing page with Google Sheets waitlist storage.
 
 Use Node 22 or later. Copy `.env.example` to `.env`, add the private `WAITLIST_SECRET` matching the Apps Script property, and run `npm start`. Open http://localhost:3000.
 
-## Production
+## Deploy on Vercel
 
-Deploy this repository to a Node hosting service. Start command: `npm start`. Set `NODE_ENV=production`, `SITE_ORIGIN=https://notlinear.lol`, `WAITLIST_URL` (see `.env.example`), and `WAITLIST_SECRET` in the host's private environment settings. The host provides `PORT`.
+1. In Vercel, add a new project and import `probablyworks-not/notlinear-website`.
+2. Use framework preset **Other**, root directory **.**, and the repository's build settings (`npm run build`, output `public`). The waitlist endpoint is a Node function at `/api/waitlist`.
+3. Add private environment variables for Production (and Preview if you want preview signups):
+   - `WAITLIST_SECRET`: the same value as the Apps Script property. Do not prefix with NEXT_PUBLIC_.
+   - `WAITLIST_URL`: the deployment URL in `.env.example` (also configured as the server default).
+   - `SITE_ORIGIN`: `https://notlinear.lol`.
+4. Deploy. Under project Settings → Domains, add `notlinear.lol` and `www.notlinear.lol`.
+5. Apply the exact DNS records shown by Vercel in BigRock. Wait for Vercel to verify both domains and provision HTTPS. Use Vercel's displayed values rather than guessing DNS targets.
+6. Test a signup on the deployed site and confirm its row in Google Sheets. Repeating the email should not add another row.
 
-Point notlinear.lol to that host using its domain/DNS instructions and enable HTTPS. Both https://notlinear.lol and https://www.notlinear.lol are allowed by the waitlist backend.
+Both custom domain origins and this project's Vercel deployment/production URLs are allowed by the API. Localhost is allowed only outside production. The static build contains only the landing page; `.env` and server files are not copied into public output.
 
-GitHub Pages serves static files and cannot run this Node backend. Publishing this repository does not itself deploy the website.
+For other Node hosting, use `npm start` and set `NODE_ENV=production`. GitHub Pages cannot run the waitlist backend.
 
 ## Waitlist
 

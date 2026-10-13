@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check server.mjs"
+    "check": "node --check server.mjs && node --check lib/waitlist.mjs && node --check api/waitlist.js",
+    "build": "node scripts/build.mjs"
   },
   "engines": {
-    "node": ">=22"
+    "node": "22.x"
   }
 }
