@@ -1,6 +1,6 @@
 # notlinear website
 
-Animated landing page with Google Sheets waitlist storage.
+Animated landing page with Google Sheets waitlist storage. The build extracts the standalone bundle into direct-render HTML and static assets, eliminating browser-side unpacking and the loading splash.
 
 ## Run locally
 

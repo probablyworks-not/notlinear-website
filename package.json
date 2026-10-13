@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.mjs",
     "check": "node --check server.mjs && node --check lib/waitlist.mjs && node --check api/waitlist.js",
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "prestart": "npm run build"
   },
   "engines": {
     "node": "22.x"
