@@ -9,6 +9,8 @@ const readBundle = name => {
 };
 const manifest = readBundle('manifest');
 let html = readBundle('template');
+const responsiveStyles = await readFile('responsive.css', 'utf8');
+html = html.replace('</head>', `<style id="responsive-layout">${responsiveStyles}</style>\n</head>`);
 if (/<iframe\b/i.test(html)) throw new Error('Nested pages require explicit extraction');
 await rm('public', {recursive: true, force: true});
 await mkdir('public/assets', {recursive: true});

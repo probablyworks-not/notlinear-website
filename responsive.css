@@ -1,0 +1,52 @@
+/* Keep these overrides after the original desktop styles. */
+@media (max-width: 900px) {
+  .hero > .wrap, .hd-body, .stage { grid-template-columns: minmax(0, 1fr); }
+  .hd-body { min-height: 0; grid-template-rows: auto; gap: 20px; padding: 24px 20px; }
+  .hd-body .hd-doc, .hd-body .bp, .hd-body .cbar-w { grid-column: 1; grid-row: auto; min-width: 0; }
+  .hero-demo, .win, .nx, .lane, .bento .ben, .vis { min-width: 0; }
+  .stage { gap: 32px; }
+  .stage .lane:last-child { padding: 0; }
+  .lx { min-height: 480px; height: 480px; }
+  .nx-body { min-height: 0; padding: 20px 16px; }
+  .nx-doc { padding-right: 0; }
+  .nx-margin { position: static; width: auto; margin-top: 16px; }
+  .nx .cbar-w { padding: 0 16px 16px; }
+  .nx-top { height: auto; min-height: 40px; flex-wrap: wrap; padding: 10px 14px; }
+  .nx-top .chips { margin-left: 0; flex-wrap: wrap; }
+  .bento .ben, .bento .ben:nth-child(n) { grid-column: span 12; padding: 24px; }
+  .bento .vis { height: auto; padding: 16px; }
+  .bento .v-grid, .bento .ben:nth-child(2) .v-grid { grid-template-columns: minmax(0, 1fr); height: auto; gap: 16px; }
+  .bento .v-grid > * { overflow: visible; }
+  .crumb { flex-wrap: wrap; }
+  .cb-r { flex-wrap: wrap; gap: 10px; }
+  .cb-s { flex-shrink: 0; }
+  .pc { gap: 8px; }
+  .steps button, #pp-play { min-width: 40px; min-height: 44px; }
+  .wl { padding: 16px; overflow-y: auto; }
+  .wl-card { max-height: calc(100dvh - 32px); overflow-y: auto; }
+  .wl-x { width: 44px; height: 44px; top: 6px; right: 6px; }
+}
+
+@media (max-width: 480px) {
+  .wrap { padding-inline: 16px; }
+  .hero { padding-top: 40px; }
+  .hero h1 { font-size: clamp(36px, 10.5vw, 46px); }
+  h2, .paths-h { font-size: clamp(28px, 8vw, 36px); }
+  .hero .lede { font-size: 21px; }
+  .hero-actions { flex-direction: column; align-items: stretch; margin-top: 24px; }
+  .hero-actions .btn { justify-content: center; min-height: 44px; white-space: normal; text-align: center; }
+  .nav .wrap { gap: 8px; }
+  .nav .btn { min-height: 44px; padding-inline: 12px; font-size: 13px; }
+  .section { padding-block: 48px; }
+  .hero-demo { margin-top: 24px; }
+  .hd-body { padding: 20px 16px; }
+  .hd-doc { font-size: 15px; }
+  .win-tabs { padding-inline: 4px; }
+  .win-tab { padding-inline: 8px; }
+  .bento .ben, .bento .ben:nth-child(n) { padding: 20px 16px; }
+  .bento .vis { padding: 12px; }
+  .bento .paper, .bento .bp, .brow, .proj { overflow-wrap: anywhere; }
+  .wl-card { padding: 44px 20px 24px; border-radius: 16px; }
+  .wl-card input { min-width: 0; width: 100%; min-height: 48px; }
+  .wl-card .btn { min-height: 44px; }
+}
